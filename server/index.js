@@ -1,4 +1,5 @@
 import express from 'express'
+import {server, app} from './socket/socket.js'
 import dotenv from 'dotenv' 
 import cookieParser from 'cookie-parser'
 
@@ -11,7 +12,7 @@ import connectDb from './config/db.js'
 
 dotenv.config()
 
-const app = express()
+
 const PORT = process.env.PORT || 5000
 
 //middlewares
@@ -28,6 +29,6 @@ app.get('/', (req, res) => {
 })  
 
 connectDb();
-app.listen(PORT, () => {
+server.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`)
 })

@@ -1,35 +1,66 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
-
+import {
+  createBrowserRouter,
+  RouterProvider,
+  Navigate,
+} from "react-router-dom";
+import {
+  AuthContextProvider,
+  useAuthContext,
+} from "./context/authContext";
+import Home from "./pages/home/Home";
+import Login from "./pages/login/Login";
+import SignUp from "./pages/signup/Signup";
+import { Toaster } from "react-hot-toast";
+import "./index.css";
+import store from "./app/store"
+import { Provider } from "react-redux";
 function App() {
-  const [count, setCount] = useState(0)
+  const { user } = useAuthContext();
+
+  const routes = [
+    {
+      path: "/",
+      element: user ? (
+        <Home />
+      ) : (
+        <Navigate to='/login' />
+      ),
+    },
+    {
+      path: "/login",
+      element: !user ? (
+        <Login />
+      ) : (
+        <Navigate to='/' />
+      ),
+    },
+    {
+      path: "/signup",
+      element: !user ? (
+        <SignUp />
+      ) : (
+        <Navigate to='/' />
+      ),
+    },
+    {
+      path: "*",
+      element: <Navigate to='/login' />,
+    },
+  ];
+
+  const router =
+    createBrowserRouter(routes);
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+    <Provider store={store}>
+      <div className='app-container'>
+        <Toaster />
+        <RouterProvider
+          router={router}
+        />
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    </Provider>
+  );
 }
 
-export default App
+export default App;
