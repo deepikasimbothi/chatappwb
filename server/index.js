@@ -15,6 +15,14 @@ dotenv.config()
 const __dirname = path.resolve();
 const PORT = process.env.PORT || 5000
 
+
+app.use(
+  cors({
+    origin:
+      "https://mg-mern-chatv1.onrender.com", // Allow this origin
+  })
+);
+
 //middlewares
 app.use(express.json())
 app.use(cookieParser())
