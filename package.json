@@ -5,7 +5,9 @@
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "server": "nodemon server/index.js"
+    "server": "nodemon server/index.js",
+    "start": "node server/index.js",
+    "client-build": "bun install && cd client && bun install && bun run build"
   },
   "keywords": [],
   "author": "",
@@ -13,6 +15,7 @@
   "description": "",
   "dependencies": {
     "bcryptjs": "^2.4.3",
+    "client": "^0.0.1",
     "cookie-parser": "^1.4.7",
     "dotenv": "^16.4.5",
     "express": "^4.21.1",
