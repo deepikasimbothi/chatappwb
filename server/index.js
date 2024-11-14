@@ -1,11 +1,11 @@
 import express from "express";
 import {
+  app,
   server,
-  io,
+
 } from "./socket/socket.js"; // Import io if needed
 import dotenv from "dotenv";
 import cookieParser from "cookie-parser";
-import cors from "cors";
 import path from "path";
 
 // Routes
@@ -20,16 +20,10 @@ dotenv.config();
 const __dirname = path.resolve();
 const PORT = process.env.PORT || 5000;
 
-// CORS configuration for Express
-const corsOptions = {
-  origin:
-    "https://mg-mern-chatv1.onrender.com", // Allow this origin
-  credentials: true, // Allow credentials if needed
-};
+
 
 // Use CORS middleware
-const app = express();
-app.use(cors(corsOptions));
+
 
 // Middlewares
 app.use(express.json());

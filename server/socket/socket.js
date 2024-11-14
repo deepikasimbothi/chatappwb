@@ -1,18 +1,14 @@
-import express from "express";
 import { Server } from "socket.io";
-import { createServer } from "http";
+import http from "http";
+import express from "express";
 
-// Create an Express app
 const app = express();
-const server = createServer(app);
 
-// Socket.IO server setup with CORS
+const server = http.createServer(app);
 const io = new Server(server, {
   cors: {
-    origin:
-      "https://mg-mern-chatv1.onrender.com", // Allow this origin
+    origin: ["http://localhost:5173"],
     methods: ["GET", "POST"],
-    credentials: true, // Allow credentials if needed
   },
 });
 
