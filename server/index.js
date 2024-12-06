@@ -3,6 +3,8 @@ import {
   app,
   server,
 
+ 
+
 } from "./socket/socket.js"; // Import io if needed
 import dotenv from "dotenv";
 import cookieParser from "cookie-parser";
@@ -18,8 +20,7 @@ import connectDb from "./config/db.js";
 dotenv.config();
 
 const __dirname = path.resolve();
-const PORT = process.env.PORT || 5000;
-
+const PORT = process.env.PORT || 3000;
 
 
 // Use CORS middleware

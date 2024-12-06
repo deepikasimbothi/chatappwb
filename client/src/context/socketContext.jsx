@@ -19,7 +19,7 @@ const SocketContextProvider = ({ children }) => {
     useEffect(() => { 
         if (user) {
           const socket = io(
-            "https://chat-app-yt.onrender.com",
+            "http://localhost:5001",
               {
                   query: {
                     userId: user._id,

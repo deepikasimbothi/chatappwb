@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "server": "nodemon server/index.js",
     "start": "node server/index.js",
-    "client-build": "bun install && cd client && bun install && bun run build"
+    "build": "npm install && cd client && npm install && npm run build"
   },
   "keywords": [],
   "author": "",
