@@ -2,9 +2,6 @@ import express from "express";
 import {
   app,
   server,
-
- 
-
 } from "./socket/socket.js"; // Import io if needed
 import dotenv from "dotenv";
 import cookieParser from "cookie-parser";
@@ -14,7 +11,6 @@ import path from "path";
 import authRoutes from "./routes/auth-routes.js";
 import messageRoutes from "./routes/message-route.js";
 import usersRoutes from "./routes/users-route.js";
-
 import connectDb from "./config/db.js";
 
 dotenv.config();
@@ -22,9 +18,7 @@ dotenv.config();
 const __dirname = path.resolve();
 const PORT = process.env.PORT || 3000;
 
-
 // Use CORS middleware
-
 
 // Middlewares
 app.use(express.json());
@@ -36,24 +30,20 @@ app.use("/api/messages", messageRoutes);
 app.use("/api/users", usersRoutes);
 
 // Serve static files
-app.use(
-  express.static(
-    path.join(__dirname, "/client/dist")
-  )
-);
+if(process.env.NODE_ENV !== "development"){
+  app.use(express.static(path.join(__dirname, "./client/dist")));
+}
 
 // Handle all other routes
-app.get("*", (req, res) => {
-  res.sendFile(
-    path.join(
-      __dirname,
-      "client",
-      "dist",
-      "index.html"
-    )
-  );
+app.all("*", (_req , res) => {
+  if (process.env.NODE_ENV === "development") {
+    res.status(200).send({ message: "Welcome to Synchronous Chat!" });
+  } else {
+    res.sendFile(path.join(__dirname, "./client/dist", "index.html"));
+  }
 });
 
+console.log(__dirname)
 // Connect to the database
 connectDb();
 

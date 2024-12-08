@@ -91,7 +91,7 @@ export const getMessage = async (req, res) => {
             return res.status(200).json([])
         }
         const messages = conversation.messages
-        console.log('messages in controller', messages)
+        //console.log('messages in controller', messages)
         
         res.status(200).json({ messages })
     

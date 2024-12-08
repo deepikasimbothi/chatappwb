@@ -6,7 +6,7 @@ import { io } from "socket.io-client";
 import { useContext } from "react";
 
 
-
+const serverApiUrl = import.meta.env.DEV ? "http://localhost:5001/" : "/";
 const SocketContext = createContext();
 
 const useSocketContext = () => useContext(SocketContext);
@@ -16,10 +16,11 @@ const SocketContextProvider = ({ children }) => {
     const [onlineUsers, setOnlineUsers] = useState([]);
     const {user}= useAuthContext();
 
+
     useEffect(() => { 
         if (user) {
           const socket = io(
-            "http://localhost:5001",
+            serverApiUrl,
               {
                   query: {
                     userId: user._id,
