@@ -6,7 +6,7 @@ import { io } from "socket.io-client";
 import { useContext } from "react";
 
 
-const serverApiUrl = import.meta.env.DEV ? "http://localhost:5001/" : "/";
+const serverApiUrl = import.meta.env.DEV ? "https://chatappweb-he6e.onrender.com" : "/";
 const SocketContext = createContext();
 
 const useSocketContext = () => useContext(SocketContext);
