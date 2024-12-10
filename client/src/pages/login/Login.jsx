@@ -20,12 +20,12 @@ const Login = () => {
 
 	return (
     <div className='flex flex-col items-center justify-center min-w-96 mx-auto'>
-      <div className='w-full p-6 rounded-lg shadow-md bg-gray-400 bg-clip-padding backdrop-filter backdrop-blur-lg bg-opacity-0'>
-        <h1 className='text-3xl font-semibold text-center text-gray-300'>
+      <div className='w-full p-6 rounded-lg shadow-md bg-blue-200 bg-clip-padding backdrop-filter backdrop-blur-lg bg-opacity-0'>
+        <h1 className='text-3xl font-semibold text-center text-blue-900'>
           Login
-          <span className='text-[#ff8a86c7]'>
+          <span className='text-[#3d1acadc]'>
             {" "}
-            ChatApp
+            Cognico ChatApp
           </span>
         </h1>
 
