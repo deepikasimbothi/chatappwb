@@ -13,10 +13,10 @@ const Conversation = ({ conversation , getEmoji }) => {
   return (
     <>
       <div
-        className={`flex gap-2 items-center hover:bg-[#e670707c] rounded p-2 py-1 cursor-pointer ${
+        className={`flex gap-2 items-center hover:bg-blue-400/90 rounded p-2 py-1 cursor-pointer ${
           selectedConversation?._id ===
           conversation._id
-            ? "bg-[#e67070cb]"
+            ? "bg-blue-600/70"
             : ""
         }`}
         onClick={() =>

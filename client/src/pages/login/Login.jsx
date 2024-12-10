@@ -21,9 +21,9 @@ const Login = () => {
 	return (
     <div className='flex flex-col items-center justify-center min-w-96 mx-auto'>
       <div className='w-full p-6 rounded-lg shadow-md bg-blue-200 bg-clip-padding backdrop-filter backdrop-blur-lg bg-opacity-0'>
-        <h1 className='text-3xl font-semibold text-center text-blue-900'>
+        <h1 className='text-2xl font-bold text-center text-white'>
           Login
-          <span className='text-[#3d1acadc]'>
+          <span className='text-sky-100'>
             {" "}
             Cognico ChatApp
           </span>
@@ -32,7 +32,7 @@ const Login = () => {
         <form onSubmit={handleSubmit}>
           <div>
             <label className='label p-2'>
-              <span className='text-base label-text'>
+              <span className='text-base text-white label-text'>
                 Username
               </span>
             </label>
@@ -48,7 +48,7 @@ const Login = () => {
 
           <div>
             <label className='label'>
-              <span className='text-base label-text'>
+              <span className='text-base  text-white label-text'>
                 Password
               </span>
             </label>
@@ -63,7 +63,7 @@ const Login = () => {
           </div>
           <Link
             to='/signup'
-            className='text-sm  hover:underline hover:text-blue-600 mt-2 inline-block'>
+            className='text-sm  text-white hover:underline hover:text-blue-300 mt-2 inline-block'>
             {"Don't"} have an account?
           </Link>
 

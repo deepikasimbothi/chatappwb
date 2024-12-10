@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 .app-container {
-  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('/bg1.png');
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('/bgr.png');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -62,3 +62,13 @@
 		transform: translate3d(4px, 0, 0);
 	}
 }
+
+.scroll-bar-hide {
+	scrollbar-width: none;
+	-ms-overflow-style: none;
+  }
+  
+  .scroll-bar-hide::-webkit-scrollbar {
+	display: none;
+  }
+  

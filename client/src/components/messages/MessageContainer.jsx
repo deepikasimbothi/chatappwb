@@ -22,7 +22,7 @@ const MessageContainer = () => {
             <span className='label-text text-lg'>
               To:
             </span>{" "}
-            <span className='text-rose-300/60 font-bold pl-1'>
+            <span className='text-white font-bold pl-1'>
               {selectedConversation?.fullName.toUpperCase()}
             </span>
           </div>

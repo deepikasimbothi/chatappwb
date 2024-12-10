@@ -7,14 +7,14 @@ export default defineConfig({
   server: {
     proxy: {
       '/api': {
-        target: 'https://chatappweb-he6e.onrender.com',
+        target: ' http://localhost:5001/',
       }
     }
   },
    build: {
     proxy: {
       '/api': {
-        target: '/',
+        target: 'https://chatappweb-he6e.onrender.com/' ,
       }
     }
    }

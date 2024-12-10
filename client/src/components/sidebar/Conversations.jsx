@@ -5,7 +5,7 @@ import { getRandomEmoji } from "../../utils/emojis";
 const Conversations = () => {
 	const {loading,conversations} = useGetConversation()
 	return (
-		<div className='py-2 flex flex-col overflow-auto'>
+		<div className='py-2 flex flex-col overflow-auto scroll-bar-hide'>
 			{loading
 				?
 				<div className="flex justify-center items-center h-screen">

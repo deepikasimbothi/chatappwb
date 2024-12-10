@@ -6,7 +6,7 @@ const LogoutButton = () => {
     useLogout();
 
   return (
-    <div className='mt-auto'>
+    <div className='mt-4 ml-2'>
       { 
         !loading
         ? (

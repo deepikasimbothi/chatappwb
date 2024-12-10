@@ -39,7 +39,7 @@ const Messages = () => {
       {loading && <MessageSkeleton />}
       {!loading &&
         messages.length === 0 && (
-          <p className='text-center'>
+          <p className='text-center text-white'>
             Send a message to start the
             conversation
           </p>
